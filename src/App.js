@@ -18,7 +18,7 @@ function App() {
     <>
       {/* <p>Hey there, welcome</p> */}
       <h1>Niaje bro, karibu</h1>
-      <img width={'70%'} height={'70%'} src='https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='myImage'></img>
+      <img height={"100%"} width={"50%"} src='https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='myImage'></img>
       <div>
       
       {/* //change landlord, change price */}
@@ -32,6 +32,11 @@ function App() {
 }
 
 export default App;
+
+// // ES6 Destructuring
+// let myObj= {fName:"Susan", lName:"Githaiga", nationality:"Kenyan"}
+// let{fName,lName, nationality}= myObj;
+// console.log(lName)
 
 // export function FirstComment(){
 //   return (

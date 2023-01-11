@@ -1,15 +1,45 @@
+// start the function name in caps
 // declare a function
 // return jsx
 // export the component
 
-function Availablehouses() {
+
+//  when you pass data from the parent to child, the
+//  data is received by the child using the props argument
+function Availablehouses(props) {
+    console.log(props)
     return (
         <>
-        <img src="https://images.unsplash.com/photo-1605283176568-9b41fde3672e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"></img>
-        <button>1500</button>
-        <h3>Landlord Contact no: 0700 000 000</h3>
+        <h1>List of available houses</h1>
+        <img src={props.image}></img>
+        <button>{props.price}</button>
+        <h3>{props.landlord}</h3>
+        
 
         </>
     )
 }
-export default Availablehouses
+
+let studentnames =['zakaria', 'Bathlomeo', 'Ayubu', 'Yakubu','Zebedayo','Susan', 'Githaiga']
+let bankAccs =[2842000,768000, 242000,750000]
+
+export  {studentnames,bankAccs, Availablehouses}
+
+
+// export default Availablehouses
+
+
+// // Assign a prop to a component
+// function ParentComponent() {
+//     // passing prop to ChildComponent
+//     return <ChildComponent text="Hello!" number={2} />;
+//   }
+  
+//   function ChildComponent(props) {
+//     // using the values of the text and number props
+//     return (
+//       <div>
+//         {props.text} {props.number}
+//       </div>
+//     );
+//   }

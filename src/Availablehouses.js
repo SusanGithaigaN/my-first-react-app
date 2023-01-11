@@ -8,20 +8,21 @@
 //  data is received by the child using the props argument
 
 // using destructuring in props with default values
-function Availablehouses({image="https://images.unsplash.com/photo-1464082354059-27db6ce50048?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8aG91c2VzJTIwZm9yJTIwcmVudHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",landlord, price="the house is free"}) {
-    // console.log(image)
-    // console.log(landlord)
-    // console.log(price)
+function Availablehouses({myHouse}) {
+    console.log(myHouse)
     return (
         <>
         <h1>List of available houses</h1>
+        <img src={myHouse.image}></img>
+        <h3>{myHouse.landlord}</h3>
+        <button>{myHouse.price}</button>
         {/* not ternary expression  for landlord*/}
         {/* {props.landlord ==="Mr Makumi" ?  <img src={props.image} ></img> :<p>Not Makumi</p>} */}
         {/* '' for image with a condition and a default value  */}
         {/* <img src={props.image !== "" ? props.image : "https://media.istockphoto.com/id/1356363489/photo/poor-tired-depressed-hungry-homeless-man-holding-a-cardboard-house-nostalgia-and-hope-concept.jpg?b=1&s=170667a&w=0&k=20&c=ZKFuAonoSB36M4vH4kvuXtFtc5v6bGEpMW1VpMQPT4M="} */}
-        <img src={image} ></img> 
+        {/* <img src={image} ></img> 
         <button>{price}</button>
-        <h3>{landlord}</h3>
+        <h3>{landlord}</h3> */}
         
 
         </>

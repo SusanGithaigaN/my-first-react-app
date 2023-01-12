@@ -7,15 +7,29 @@
 //  when you pass data from the parent to child, the
 //  data is received by the child using the props argument
 
+
+
+// // state variable to track total money in bank
+// const[balance, setBalance] = useState(1000000);
+
+
+
 // using destructuring in props with default values
+import { useState } from "react"
 function Availablehouses({myHouse}) {
-    console.log(myHouse)
+const[likes, addLikes] = useState(0);
+    
+function likeHouse(){
+        addLikes((likes)=>likes+=1)
+      }
+    // console.log(myHouse)
     return (
         <>
         <h1>List of available houses</h1>
         <img src={myHouse.image}></img>
         <h3>{myHouse.landlord}</h3>
         <button>{myHouse.price}</button>
+        <button onClick={likeHouse}>{likes}likes</button>
         {/* not ternary expression  for landlord*/}
         {/* {props.landlord ==="Mr Makumi" ?  <img src={props.image} ></img> :<p>Not Makumi</p>} */}
         {/* '' for image with a condition and a default value  */}

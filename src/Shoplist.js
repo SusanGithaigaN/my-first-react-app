@@ -10,7 +10,7 @@ import React from "react";
 //     )
 // }
 
-// DEstructuring
+// Destructuring
 function Shoplist ({shop:{shopName, location, tillNumber}}){
     // function tillClicked(){
     //     alert(`Lipa na M-pesa to ${tillNumber}`)

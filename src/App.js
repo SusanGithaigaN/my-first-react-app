@@ -4,6 +4,7 @@ import React from 'react';
 // import Availablehouses from './Availablehouses';
 import {studentnames, Availablehouses}  from './Availablehouses'
 import Shoplist from './Shoplist';
+import Newform from './Newform';
 
 
 function App() {
@@ -22,10 +23,36 @@ function App() {
     )
   })
 
+// create a list of shops
+let myShops = [
+  {shopName:"Daystar Enterprises", location:"Kiambu"},
+  {shopName:"kwamaiko", location:"kinoo", tillNumber:3728992},
+  {shopName:"Riggy g", location:"kenya kwanza", tillNumber:828329},
+  {shopName:"Mwando Stores", location:"Machakos", tillNumber:81203}
+  ];
+  // map through every shop in the list
+  let myShopRet = myShops.map((shop, ind) =>{
+    return(
+      // <Shoplist shopname={shop.shopName} location={shop.location} tillNumber={shop.tillNumber}> </Shoplist> 
+      
+      <Shoplist shop={shop}></Shoplist>
+      
+    )
+  })
+
+  
+  function childData(response){
+    console.log("I've gotten to the child " + response)
+  }
+
+  function handleAddHouse(data){
+    console.log(data)
+  }
   return (
     <>
       {/* <p>Hey there, welcome</p> */}
       <h1>Niaje bro, karibu</h1>
+      <Newform  onAddHouse={handleAddHouse} parentFunction={childData}/>
       <img height={'70%'} width={'70%'} src='https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' alt='myImage'></img>
             {/* <div> */}
       
@@ -40,6 +67,7 @@ function App() {
 
      {/* Render shops */}
      {myShopRet}
+     
      
     </>
   );
@@ -58,18 +86,3 @@ export default App;
 //   )
 // }
 
-// create a list of shops
-let myShops = [
-{shopName:"Daystar Enterprises", location:"Kiambu"},
-{shopName:"kwamaiko", location:"kinoo", tillNumber:3728992},
-{shopName:"Riggy g", location:"kenya kwanza", tillNumber:828329},
-{shopName:"Mwando Stores", location:"Machakos", tillNumber:81203}
-];
-// map through every shop in the list
-let myShopRet = myShops.map((shop, ind) =>{
-  return(
-    // <Shoplist shopname={shop.shopName} location={shop.location} tillNumber={shop.tillNumber}> </Shoplist> 
-    
-    <Shoplist shop={shop}></Shoplist>
-  )
-})
